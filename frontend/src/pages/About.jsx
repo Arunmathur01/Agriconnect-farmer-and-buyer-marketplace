@@ -381,7 +381,7 @@ export default function About() {
 			</section>
 
 			{/* CTA Section */}
-			<section className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 text-white text-center">
+			{/* <section className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 text-white text-center">
 				<h2 className="text-4xl md:text-5xl font-bold mb-6">{t('readyToTransform')}</h2>
 				<p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
 					Join thousands of farmers and buyers who are already benefiting from Agriconnect's 
@@ -395,7 +395,7 @@ export default function About() {
 						Start Buying Now
 					</button>
 				</div>
-			</section>
+			</section> */}
 		</div>
 	);
 }
