@@ -35,7 +35,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new SocketIOServer(server, {
 	cors: {
-		origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+		origin: process.env.CORS_ORIGIN ,
 		credentials: true,
 	},
 });
@@ -47,7 +47,7 @@ stripeWebhookMiddleware(app);
 // Static uploads (before Helmet to avoid CSP issues)
 // Add CORS headers for static file serving
 const corsOptions = {
-	origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+	origin: process.env.CORS_ORIGIN ,
 	credentials: true,
 	methods: ['GET', 'HEAD', 'OPTIONS'],
 	allowedHeaders: ['Content-Type'],
@@ -90,7 +90,7 @@ app.use(helmet({
 	crossOriginEmbedderPolicy: false, // Allow images to load cross-origin
 	crossOriginResourcePolicy: { policy: "cross-origin" }, // Allow cross-origin resources
 }));
-app.use(cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:5173', credentials: true }));
+app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
 app.use(express.json({ limit: '5mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());

@@ -131,8 +131,8 @@ export default function AppLayout({ children }) {
 
 			{/* Mobile drawer */}
 			{drawerOpen && (
-				<div className="md:hidden fixed inset-0 bg-black/40" onClick={() => setDrawerOpen(false)}>
-					<div className="absolute left-0 top-0 h-full w-72 bg-white text-gray-900 p-4" onClick={(e) => e.stopPropagation()}>
+				<div className="md:hidden fixed inset-0 z-50 bg-black/40" onClick={() => setDrawerOpen(false)}>
+					<div className="absolute left-0 top-0 h-full w-72 max-w-[85vw] bg-white text-gray-900 p-4 overflow-y-auto shadow-xl" onClick={(e) => e.stopPropagation()}>
 						<form onSubmit={submitSearch} className="mb-4 flex gap-2">
 							<input value={q} onChange={(e) => setQ(e.target.value)} className="flex-1 p-2 border rounded" placeholder={t('search')} />
 							<button className="bg-primary text-white px-3 rounded">Go</button>
